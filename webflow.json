@@ -1,4 +1,5 @@
 {
   "name": "Webflow Next App",
-  "size": "comfortable"
+  "size": "comfortable",
+  "publicDir": "dist"
 }
