@@ -1,5 +1,6 @@
 {
   "name": "Webflow Next App",
   "size": "comfortable",
-  "publicDir": "dist"
+  "publicDir": "dist",
+  "apiVersion": "2"
 }
