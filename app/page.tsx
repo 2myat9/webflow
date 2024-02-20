@@ -1,12 +1,45 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+
+  const addDiv = async () => {
+    const allElements = await webflow.getAllElements();
+    const bodyEl = allElements[0];
+    console.log(bodyEl);
+
+    if (bodyEl.type != "Body") {
+      return;
+    }
+    const divEl = webflow.createDOM("div");
+    divEl.setTextContent("Hellow world!");
+
+    let myStyle = await webflow.getStyleByName("divBlockStyle");
+    if (!myStyle) {
+      myStyle = webflow.createStyle("divBlockStyle");
+    }
+    myStyle.clearAllProperties();
+    myStyle.setProperties({
+      "background-color": "blue",
+      "font-size": "30px",
+      display: "flex",
+      "justify-content": "center",
+    });
+    await myStyle.save();
+
+    divEl.setStyles([myStyle]);
+
+    const existingChildren = bodyEl.getChildren();
+    bodyEl.setChildren([...existingChildren, divEl]);
+    await bodyEl.save();
+  };
+
   const handleClick = () => {
     console.log("Hello hello");
-    // const myDOMElement = webflow.createDOM("span");
-    // if (myDOMElement.textContent) {
-    //   myDOMElement.setTextContent("Hello, Webflow!");
-    // }
+    addDiv();
+    router.push("/tuto");
   };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
