@@ -10,7 +10,7 @@ export async function generateDOMTree(schema: WebflowElementSchema, parent: AnyE
 
     const { element_type, content, children, styles } = schema;
     if (parent && parent?.children) {
-        const newElement =  await parent.append(element_type);
+        const newElement = await parent.append(element_type);
     
         if (content && newElement?.textContent) {
             newElement.setTextContent(content);

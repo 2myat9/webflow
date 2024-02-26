@@ -23,7 +23,7 @@ export default function Home() {
 
   // Example usage
   const sampleElement: WebflowElementSchema = {
-    element_type: webflow.elementPresets.DivBlock,
+    element_type: webflow.elementPresets.HFlex,
 
     // content: "Hello, world!",
     children: [
