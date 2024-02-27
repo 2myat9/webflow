@@ -1,50 +1,23 @@
 "use client";
 
 import { WebflowElementSchema } from './generateTemplate';
+import { returnSchema } from './templates/firstElement';
 import { generateDOMTree } from './generateTemplate';
+import { checkElementStyles } from './checkElementStyles';
+import { useRouter } from "next/navigation";
 
 
 
 export default function Home() {
   
   const handleClick = async () => {
+    const router = useRouter();
     const element = await webflow.getSelectedElement();
-    let newStyle = await webflow.getStyleByName('beautifulStyle');
-    if (!newStyle) {
-      newStyle = await webflow.createStyle('divBlockStyle');
-      
-    }
-    newStyle.removeAllProperties();
-    newStyle.setProperties({
-    "background-color": "gold",
-    "font-size": "16px",
-    "font-weight": "bold",
-  });
+    const sampleElement = await returnSchema('beautifulStyle');
+    
 
   // Example usage
-  const sampleElement: WebflowElementSchema = {
-    element_type: webflow.elementPresets.HFlex,
-
-    // content: "Hello, world!",
-    children: [
-        {
-        element_type: webflow.elementPresets.Paragraph,
-        content: "Option 1",
-        styles: newStyle,
-        },
-        {
-          element_type: webflow.elementPresets.Paragraph,
-          content: "Option 2",
-          styles: newStyle,
-        },
-        {
-          element_type: webflow.elementPresets.Paragraph,
-          content: "Option 3",
-          styles: newStyle,
-        },
-    ],
-    
-    };
+  
 
     if (element && element?.children) {
       element.prepend(await generateDOMTree(sampleElement, element));
