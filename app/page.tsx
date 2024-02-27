@@ -1,55 +1,55 @@
 "use client";
 
+
+import { WebflowElementSchema } from './generateTemplate';
+import { returnSchema } from './templates/firstElement';
+import { generateDOMTree } from './generateTemplate';
+import { checkElementStyles } from './checkElementStyles';
 import { useRouter } from "next/navigation";
 
+
+
 export default function Home() {
-  const router = useRouter();
+  
+  const handleClick = async () => {
+    // const router = useRouter();
+    const element = await webflow.getSelectedElement();
+    const sampleElement = await returnSchema('beautifulStyle');
+    console.log(sampleElement)
+    
 
-  const addDiv = async () => {
-    const allElements = await webflow.getAllElements();
-    const bodyEl = allElements[0];
-    console.log(bodyEl);
+  // Example usage
+  
 
-    if (bodyEl.type != "Body") {
-      return;
+    if (element && element?.children) {
+      element.prepend(await generateDOMTree(sampleElement, element));
+    
+    } else {
+      console.log("Please select the body element!");
     }
-    const divEl = webflow.createDOM("div");
-    divEl.setTextContent("Hellow world!");
 
-    let myStyle = await webflow.getStyleByName("divBlockStyle");
-    if (!myStyle) {
-      myStyle = webflow.createStyle("divBlockStyle");
-    }
-    myStyle.clearAllProperties();
-    myStyle.setProperties({
-      "background-color": "blue",
-      "font-size": "30px",
-      display: "flex",
-      "justify-content": "center",
-    });
-    await myStyle.save();
-
-    divEl.setStyles([myStyle]);
-
-    const existingChildren = bodyEl.getChildren();
-    bodyEl.setChildren([...existingChildren, divEl]);
-    await bodyEl.save();
   };
 
-  const handleClick = () => {
-    console.log("Hello hello");
-    addDiv();
-    router.push("/tuto");
-  };
+  const handleCheck = () => {
+    checkElementStyles();
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="text-white">Welcome to Webflow!</div>
+      <div className="text-white">Welcome to Webflow! Select the body element from the navigation tree on the left, and click below to get started!</div>
       <button
+        id = "buttonous"
         type="button"
         className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         onClick={handleClick}
       >
-        Click Me!
+        Start Tutorial!
+      </button>
+      <button
+      type="button"
+      className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      onClick={handleCheck}>
+        Check
       </button>
     </main>
   );
