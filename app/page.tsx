@@ -1,5 +1,6 @@
 "use client";
 
+
 import { WebflowElementSchema } from './generateTemplate';
 import { returnSchema } from './templates/firstElement';
 import { generateDOMTree } from './generateTemplate';
@@ -26,6 +27,7 @@ export default function Home() {
     } else {
       console.log("Please select the body element!");
     }
+
   };
 
   const handleCheck = () => {
