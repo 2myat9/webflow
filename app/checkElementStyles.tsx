@@ -20,9 +20,6 @@ export const checkElementStyles = async () => {
     }
     const properties = await styles[0].getProperties();
 
-    console.log("properties");
-    console.log(properties);
-
     if (
       properties &&
       properties["align-items"] === "center" &&
@@ -30,14 +27,15 @@ export const checkElementStyles = async () => {
     ) {
       await webflow.notify({
         type: "Success",
-        message: "Congrats! You have completed the tutorial.",
+        message: "Congrats! You have completed the Flexbox Basics game.",
       });
-      // router.push("/tuto");
+      return true;
     } else {
       await webflow.notify({
         type: "Error",
-        message: "Try again!",
+        message: "Oops. Try again!",
       });
+      return false;
     }
   }
-}
+};
