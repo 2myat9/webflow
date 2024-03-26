@@ -17,6 +17,20 @@ export default function Home() {
     const body = elements[0];
     const sampleElement = await returnSchema("beautifulStyle");
 
+    let newStyle = await webflow.getStyleByName("beautifulStyle");
+    if (!newStyle) {
+      newStyle = await webflow.createStyle("beautifulStyle");
+    }
+    newStyle.removeAllProperties();
+    newStyle.setProperties({
+      "background-color": "pink",
+      "font-size": "16px",
+      "width": "300px",
+      "height": "225px",
+      "font-weight": "bold",
+      "overflow-y": "clip"
+    });
+
     if (body && body?.type === "Body") {
       body.prepend(await generateDOMTree(sampleElement, body));
       
@@ -48,10 +62,7 @@ export default function Home() {
               Grid Basics
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-              laboriosam magnam veniam obcaecati corporis optio quos consequatur
-              similique delectus nobis enim blanditiis, in hic! Quae dignissimos
-              debitis temporibus quia aperiam?
+              Learn how to center elements in a FlexBox using the Layout tool.
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -7,11 +7,10 @@ async function getStyle(styleName: string): Promise<Style> {
   }
   newStyle.removeAllProperties();
   newStyle.setProperties({
-    "background-color": "gold",
+    "background-color": "pink",
     "font-size": "16px",
-    "width": "300px",
-    "height": "300px",
     "font-weight": "bold",
+    "overflow-y": "clip"
   });
   return newStyle;
 }
@@ -24,20 +23,14 @@ export async function returnSchema(styleName: string): Promise<WebflowElementSch
     // content: "Hello, world!",
     children: [
       {
-        element_type: "https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/04/30/0/FNK_The-Best-Cheddar-And-Herb-Chaffle_H_s4x3.jpg.rend.hgtvcom.1280.1280.suffix/1588257306685.jpeg",
-        content: "Option 1",
-        styles: newStyle,
+        element_type: "app/images/basic.png",
       },
       {
-        element_type: "https://media.self.com/photos/5f189b76c58e27c99fbef9e3/4:3/w_1131,h_848,c_limit/blackberry-vanilla-french-toast.jpg",
-        content: "Option 2",
-        styles: newStyle,
+        element_type: "app/images/standard.png"
       },
       {
-        element_type: "https://bestfriendsforfrosting.com/wp-content/uploads/2014/03/blueberry-banana-pancakes.jpg",
-        content: "Option 3",
-        styles: newStyle,
-      },
+        element_type: "app/images/elite.png",
+      }
     ],
   };
 }
