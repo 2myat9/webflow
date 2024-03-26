@@ -6,7 +6,6 @@ styles?: Style;
 };
 
 
-
 // Function to generate a DOM tree from an HTMLElementSchema
 export async function generateDOMTree(schema: WebflowElementSchema, parent: AnyElement): Promise<AnyElement> {
 

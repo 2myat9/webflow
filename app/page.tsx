@@ -17,20 +17,6 @@ export default function Home() {
     const body = elements[0];
     const sampleElement = await returnSchema("beautifulStyle");
 
-    let newStyle = await webflow.getStyleByName("beautifulStyle");
-    if (!newStyle) {
-      newStyle = await webflow.createStyle("beautifulStyle");
-    }
-    newStyle.removeAllProperties();
-    newStyle.setProperties({
-      "background-color": "pink",
-      "font-size": "16px",
-      "width": "300px",
-      "height": "225px",
-      "font-weight": "bold",
-      "overflow-y": "clip"
-    });
-
     if (body && body?.type === "Body") {
       body.prepend(await generateDOMTree(sampleElement, body));
       
