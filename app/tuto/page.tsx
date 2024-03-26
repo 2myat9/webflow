@@ -19,12 +19,12 @@ export default function Page() {
       <p>You are given a flexbox element with 3 children elements inside it.</p>
       <p>
         <span className="underline">Your goal:</span> Center the children
-        elements on both the horizontal and the vertical axes. Focus on the
-        Layout area of the style panel on the right, as shown below.
+        elements on both the main axis and cross axis. Focus on the Layout area
+        of the style panel on the right.
       </p>
       <Image
-        src="https://assets-global.website-files.com/64f9399ca7d13575ff21a675/64f9399ca7d13575ff21d699_SYBG_ArchiveWorkspace_2400x1400.jpg"
-        alt="screenshot of the layout panel"
+        src="https://miro.medium.com/v2/resize:fit:1183/1*ubDrM-3m22gLF_pZ4DCdMw.png"
+        alt="figure explaining flexbox"
       />
       <p>
         Once you are satisfied with the changes you made, select the Body
