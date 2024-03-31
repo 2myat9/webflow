@@ -44,13 +44,12 @@ export default function Home() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Grid Basics
+              Responsive Design
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-              laboriosam magnam veniam obcaecati corporis optio quos consequatur
-              similique delectus nobis enim blanditiis, in hic! Quae dignissimos
-              debitis temporibus quia aperiam?
+              This game will test your responsive design and development skills.
+              Ready to flex your knowledge of flexbox and breakpoints? Put it to
+              the test here!
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -65,13 +64,14 @@ export default function Home() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Flexbox Basics
+              Flexbox Fundamentals
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-              laboriosam magnam veniam obcaecati corporis optio quos consequatur
-              similique delectus nobis enim blanditiis, in hic! Quae dignissimos
-              debitis temporibus quia aperiam?
+              Flexbox is a CSS layout model that allows responsive elements
+              within a container to be automatically arranged depending on
+              viewport size. This is one of the most important concepts you will
+              need when building a website. Play this game and learn how to
+              align elements on the screen exactly how you want them.
             </Typography>
           </CardContent>
         </CardActionArea>
