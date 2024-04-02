@@ -19,6 +19,7 @@ export default function Home() {
 
     if (body && body?.type === "Body") {
       body.prepend(await generateDOMTree(sampleElement, body));
+
       router.push("/tuto");
     } else {
       await webflow.notify({
