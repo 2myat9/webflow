@@ -1,5 +1,6 @@
 export const checkElementStyles = async () => {
-  const body = await webflow.getSelectedElement();
+  const all = await webflow.getAllElements();
+  const body = all[0];
   if (!body || body.type != "Body") {
     await webflow.notify({
       type: "Error",
