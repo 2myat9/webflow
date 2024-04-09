@@ -9,7 +9,7 @@ export default function Page() {
   const handleClick = async () => {
     const isPassed = await checkElementStyles();
     if (isPassed) {
-      router.push("/");
+      router.push("/addnavbar");
     }
   };
 
@@ -27,8 +27,7 @@ export default function Page() {
         alt="figure illustrating flexbox axes"
       />
       <p>
-        Once you are satisfied with the changes you made, select the Body
-        element in the left sidebar and click the Check button below.
+        Once you are satisfied with the changes you made, click the Check button below.
       </p>
       <button
         type="button"
