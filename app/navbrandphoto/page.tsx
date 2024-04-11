@@ -1,24 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { checkNavbarAdded } from "@/navbarChecks";
+import { checkNavBrand } from "@/navbarChecks";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
   const handleClick = async () => {
-    const isPassed = await checkNavbarAdded();
+    const isPassed = await checkNavBrand();
     if (isPassed) {
-      router.push("/navbrandphoto");
+      router.push("/colorchange");
     }
   };
 
   return (
     <div className="flex flex-col gap-4 p-2">
-      <h1 className="text-center uppercase">Adding a Navbar</h1>
-      <p>Let`s add in and customize a navbar to roundout your website .</p>
+      <h1 className="text-center uppercase">Branding your Navbar</h1>
+      <p>Now, we can change the navbar to show off your branding.</p>
       <p>
-        <span className="underline">Your goal:</span> Add a navbar above the three boxes you just aligned.
+        <span className="underline">Your goal:</span> Add a photo of the Webflow logo to the brand section of the navbar.
       </p>
       <Image
         src="https://assets-global.website-files.com/64f9399ca7d13575ff21a675/64f9399ca7d13575ff21d699_SYBG_ArchiveWorkspace_2400x1400.jpg"
