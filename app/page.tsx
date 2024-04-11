@@ -20,7 +20,7 @@ export default function Home() {
     if (body && body?.type === "Body") {
       body.prepend(await generateDOMTree(sampleElement, body));
 
-      router.push("/tuto");
+      router.push("/navbar-game");
     } else {
       await webflow.notify({
         type: "Error",
