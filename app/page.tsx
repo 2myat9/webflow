@@ -14,6 +14,7 @@ export default function Home() {
 
   const handleClick = async () => {
     const elements = await webflow.getAllElements();
+
     const body = elements[0];
     const sampleElement = await returnSchema("beautifulStyle");
 
