@@ -32,9 +32,7 @@ export const checkNavBrand = async () => {
     if (brand.type === "NavbarBrand" && brand.styles) {
         const brandStyles = await brand.getStyles();
         const brandProps = await brandStyles[0].getProperties();
-        console.log(all);
-        console.log(brandStyles);
-        console.log(brandProps);
+
         if (brandProps["background-image"] === "@img_66158d075eb483b8d3e74f7c") {
             await webflow.notify({
                 type: "Success",
@@ -66,7 +64,7 @@ export const checkNavbarColor = async () => {
         const wrapStyles = await navWrapper.getStyles();
         const wrapProps = await wrapStyles[0].getProperties();
         console.log(wrapProps);
-        if (wrapProps["background-color"] === "hsla(215.89285714285714, 91.06%, 51.76%, 1.00)") {
+        if (wrapProps["background-color"] === "hsla(216.42857142857142, 91.80%, 52.16%, 1.00)") {
             await webflow.notify({
                 type: "Success",
                 message: "Success! What a beautiful shade of blue...",

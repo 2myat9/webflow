@@ -9,16 +9,16 @@ export default function Page() {
   const handleClick = async () => {
     const isPassed = await checkNavbarColor();
     if (isPassed) {
-      router.push("/");
+      router.push("/colorchange");
     }
   };
 
   return (
     <div className="flex flex-col gap-4 p-2">
-      <h1 className="text-center uppercase">Color Matching</h1>
-      <p>Lastly, we want our navbar to look cohesive and clean-cut.</p>
+      <h1 className="text-center uppercase">The Button Game, Part 1</h1>
+      <p>It is time to bring some functionality into our website! </p>
       <p>
-        <span className="underline">Your goal:</span> Change the color of the navbar to match the Webflow logo blue.
+        <span className="underline">Your goal:</span> Let&#39;s add in a button below the flexbox.
       </p>
       <Image
         src="https://assets-global.website-files.com/64f9399ca7d13575ff21a675/64f9399ca7d13575ff21d699_SYBG_ArchiveWorkspace_2400x1400.jpg"
