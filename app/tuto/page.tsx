@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { checkElementStyles } from "../checkElementStyles";
+import { checkCenterAlign } from "../navbar-game/checkFunctions";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
   const handleClick = async () => {
-    const isPassed = await checkElementStyles();
+    const isPassed = await checkCenterAlign();
     if (isPassed) {
-      router.push("/");
+      router.push("/addnavbar");
     }
   };
 
@@ -27,8 +27,8 @@ export default function Page() {
         alt="figure illustrating flexbox axes"
       />
       <p>
-        Once you are satisfied with the changes you made, select the Body
-        element in the left sidebar and click the Check button below.
+        Once you are satisfied with the changes you made, click the Check button
+        below.
       </p>
       <button
         type="button"

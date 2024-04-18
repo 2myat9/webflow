@@ -14,13 +14,14 @@ export default function Home() {
 
   const handleClick = async () => {
     const elements = await webflow.getAllElements();
+
     const body = elements[0];
     const sampleElement = await returnSchema("beautifulStyle");
 
     if (body && body?.type === "Body") {
       body.prepend(await generateDOMTree(sampleElement, body));
 
-      router.push("/tuto");
+      router.push("/navbar-game");
     } else {
       await webflow.notify({
         type: "Error",
