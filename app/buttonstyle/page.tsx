@@ -1,24 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { checkNavbarColor } from "@/navbarChecks";
+import { checkButtonStyle } from "@/buttonChecks";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
   const handleClick = async () => {
-    const isPassed = await checkNavbarColor();
+    const isPassed = await checkButtonStyle();
     if (isPassed) {
-      router.push("/addbutton");
+      router.push("/");
     }
   };
 
   return (
     <div className="flex flex-col gap-4 p-2">
-      <h1 className="text-center uppercase">Styling your Navbar</h1>
-      <p>We want to customize the navbar to show off your branding with a clean, modern look.</p>
+      <h1 className="text-center uppercase">The Button Game, Part 2</h1>
+      <p>Now we should give the button some button-like characteristics.  </p>
       <p>
-        <span className="underline">Your goal:</span> Add <a href="https://yt3.googleusercontent.com/sY8Sgkv2msaC_iVJQ3tf1U5ybIqkuZMWH9nilQUQt0n9192f7J57JkCwOsr5pn91Z0q4UNKyLA=s900-c-k-c0x00ffffff-no-rj" className="underline">this photo</a> of the Webflow logo to the brand section of the navbar, then match the color of the entire navbar to be the same blue as the background.
+        <span className="underline">Your goal:</span> First, in the button settings, add a link to your website of choice. Maybe... http://www.webflow.com . Next, we want the button to turn green when we hover over it.
       </p>
       <Image
         src="https://assets-global.website-files.com/64f9399ca7d13575ff21a675/64f9399ca7d13575ff21d699_SYBG_ArchiveWorkspace_2400x1400.jpg"
