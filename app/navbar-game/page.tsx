@@ -7,20 +7,43 @@ import {
   AddNavbar,
   AddLogo,
   ChangeNavbarColor,
+  AddButton,
+  StyleButton,
 } from "./instructionBlobs";
-import { checkCenterAlign } from "./checkFunctions";
+import {
+  checkCenterAlign,
+  checkNavbarAdded,
+  checkNavBrand,
+  checkNavbarColor,
+  checkButtonAdded,
+  checkButtonStyle,
+} from "./checkFunctions";
 
 function NavbarGame() {
-  const NUM_PAGES = 4;
+  const NUM_PAGES = 6;
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
-  const [isPassed, setIsPassed] = useState([false, false, false]);
+  const [isPassed, setIsPassed] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   // pages mapped to their relevant check functions
-  const functions = [checkCenterAlign, checkCenterAlign, checkCenterAlign];
+  const functions = [
+    checkCenterAlign,
+    checkNavbarAdded,
+    checkNavBrand,
+    checkNavbarColor,
+    checkButtonAdded,
+    checkButtonStyle,
+  ];
 
   // update current page index state
   const navigateNext = () => {
-    setCurrentPageIndex((prev) => (prev < 3 ? prev + 1 : 3));
+    setCurrentPageIndex((prev) => (prev < 5 ? prev + 1 : 5));
   };
   const navigatePrev = () => {
     setCurrentPageIndex((prev) => (prev > 0 ? prev - 1 : 0));
@@ -45,7 +68,7 @@ function NavbarGame() {
   };
 
   // Render the current page based on `currentPageIndex` state
-  // alt: try indexing from an array of func components instead
+  // TODO: try indexing from an array of func components instead
   let content;
 
   if (currentPageIndex <= 0) {
@@ -54,8 +77,12 @@ function NavbarGame() {
     content = <AddNavbar />;
   } else if (currentPageIndex == 2) {
     content = <AddLogo />;
-  } else if (currentPageIndex >= 3) {
+  } else if (currentPageIndex == 3) {
     content = <ChangeNavbarColor />;
+  } else if (currentPageIndex == 4) {
+    content = <AddButton />;
+  } else if (currentPageIndex >= 5) {
+    content = <StyleButton />;
   }
 
   return (
