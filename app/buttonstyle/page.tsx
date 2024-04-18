@@ -1,24 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { checkButtonAdded } from "@/buttonChecks";
+import { checkButtonStyle } from "@/buttonChecks";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
   const handleClick = async () => {
-    const isPassed = await checkButtonAdded();
+    const isPassed = await checkButtonStyle();
     if (isPassed) {
-      router.push("/buttonstyle");
+      router.push("/");
     }
   };
 
   return (
     <div className="flex flex-col gap-4 p-2">
-      <h1 className="text-center uppercase">The Button Game, Part 1</h1>
-      <p>It is time to bring some functionality into our website! </p>
+      <h1 className="text-center uppercase">The Button Game, Part 2</h1>
+      <p>Now we should give the button some button-like characteristics.  </p>
       <p>
-        <span className="underline">Your goal:</span> Let&#39;s add in a button below the flexbox and change it&#39;s text to say &quot;Click me!&quot;
+        <span className="underline">Your goal:</span> First, in the button settings, add a link to your website of choice. Maybe... http://www.webflow.com . Next, we want the button to turn green when we hover over it.
       </p>
       <Image
         src="https://assets-global.website-files.com/64f9399ca7d13575ff21a675/64f9399ca7d13575ff21d699_SYBG_ArchiveWorkspace_2400x1400.jpg"

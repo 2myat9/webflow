@@ -19,9 +19,9 @@ export default function Home() {
     const sampleElement = await returnSchema("beautifulStyle");
 
     if (body && body?.type === "Body") {
-      body.prepend(await generateDOMTree(sampleElement, body));
+      //body.prepend(await generateDOMTree(sampleElement, body));
       // console.log(await webflow.getAllElements());
-      router.push("/tuto");
+      router.push("/addbutton");
     } else {
       await webflow.notify({
         type: "Error",

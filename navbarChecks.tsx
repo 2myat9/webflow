@@ -1,15 +1,8 @@
 export const checkNavbarAdded = async () => {
     const all = await webflow.getAllElements();
-    const body = all[0];
+
     const navWrapper = all[1];
-    if (!body || body.type != "Body") {
-        await webflow.notify({
-            type: "Error",
-            message:
-            "Error. Make sure the Body element is selected before you click Submit",
-        });
-        return;
-    }
+
     if (navWrapper.type === "NavbarWrapper") {
         await webflow.notify({
             type: "Success",
