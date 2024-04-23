@@ -199,3 +199,11 @@ export const checkButtonStyle = async () => {
     }
   }
 };
+
+// PUBLISHING
+export const checkPublished = async () => {
+  const siteInfo = await webflow.getSiteInfo();
+  const siteId = siteInfo.siteId;
+  
+  return true;
+};

@@ -131,6 +131,27 @@ const StyleButton = () => {
   );
 };
 
+const PublishPage = () => {
+  return (
+    <div className="flex flex-col gap-4 p-2">
+      <h1 className="text-center uppercase">Publishing Your Website!</h1>
+      <p>We want to introduce you to Webflow&#39;s superpower: the easiest publishing pipeline ever. </p>
+      <p>
+        <span className="underline">Your goal:</span> Use the Publish button in the top right corner of the Designer to stage your website! Don&#39;t worry, you can also unpublish with one click of a button.
+      </p>
+      <Image
+        src="https://assets-global.website-files.com/64f9399ca7d13575ff21a675/64f9399ca7d13575ff21d699_SYBG_ArchiveWorkspace_2400x1400.jpg"
+        alt="screenshot of the layout panel"
+      />
+      <p>
+        Once you have published your website, open it up and take a look! Then, click the Check button
+        below.
+      </p>
+    </div>
+  );
+};
+
+
 export {
   AlignCenter,
   AddNavbar,
@@ -138,4 +159,5 @@ export {
   ChangeNavbarColor,
   AddButton,
   StyleButton,
+  PublishPage
 };
