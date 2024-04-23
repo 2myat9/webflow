@@ -20,10 +20,9 @@ import {
 } from "./checkFunctions";
 
 function NavbarGame() {
-  const NUM_PAGES = 6;
+  const NUM_PAGES = 5;
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const [isPassed, setIsPassed] = useState([
-    false,
     false,
     false,
     false,
@@ -35,7 +34,6 @@ function NavbarGame() {
   const functions = [
     checkCenterAlign,
     checkNavbarAdded,
-    checkNavBrand,
     checkNavbarColor,
     checkButtonAdded,
     checkButtonStyle,
@@ -43,7 +41,7 @@ function NavbarGame() {
 
   // update current page index state
   const navigateNext = () => {
-    setCurrentPageIndex((prev) => (prev < 5 ? prev + 1 : 5));
+    setCurrentPageIndex((prev) => (prev < 4 ? prev + 1 : 4));
   };
   const navigatePrev = () => {
     setCurrentPageIndex((prev) => (prev > 0 ? prev - 1 : 0));
@@ -76,14 +74,12 @@ function NavbarGame() {
   } else if (currentPageIndex == 1) {
     content = <AddNavbar />;
   } else if (currentPageIndex == 2) {
-    content = <AddLogo />;
-  } else if (currentPageIndex == 3) {
     content = <ChangeNavbarColor />;
-  } else if (currentPageIndex == 4) {
+  } else if (currentPageIndex == 3) {
     content = <AddButton />;
-  } else if (currentPageIndex >= 5) {
+  } else if (currentPageIndex == 4) {
     content = <StyleButton />;
-  }
+  } 
 
   return (
     <div>
