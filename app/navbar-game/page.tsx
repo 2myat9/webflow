@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import LinearProgress from "@mui/material/LinearProgress";
 import TutoTemplate from "./TutoTemplate";
 import {
@@ -30,8 +31,9 @@ function NavbarGame() {
     false,
     false,
     false,
-    false
+    false,
   ]);
+  const router = useRouter();
 
   // pages mapped to their relevant check functions
   const functions = [
@@ -40,12 +42,16 @@ function NavbarGame() {
     checkNavbarColor,
     checkButtonAdded,
     checkButtonStyle,
-    checkPublished
+    checkPublished,
   ];
 
   // update current page index state
   const navigateNext = () => {
     setCurrentPageIndex((prev) => (prev < 5 ? prev + 1 : 5));
+
+    if (currentPageIndex == 5 && !isPassed.includes(false)) {
+      router.push("/");
+    }
   };
   const navigatePrev = () => {
     setCurrentPageIndex((prev) => (prev > 0 ? prev - 1 : 0));
@@ -85,7 +91,7 @@ function NavbarGame() {
     content = <StyleButton />;
   } else if (currentPageIndex == 5) {
     content = <PublishPage />;
-  } 
+  }
 
   return (
     <div>
