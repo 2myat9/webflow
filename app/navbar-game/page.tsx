@@ -45,6 +45,10 @@ function NavbarGame() {
     checkPublished,
   ];
 
+  const redirectHome = () => {
+    router.push("/");
+  };
+
   // update current page index state
   const navigateNext = () => {
     setCurrentPageIndex((prev) => (prev < 5 ? prev + 1 : 5));
@@ -95,6 +99,9 @@ function NavbarGame() {
 
   return (
     <div>
+      <button className="bg-gray-300 text-black" onClick={redirectHome}>
+        Home
+      </button>
       <TutoTemplate
         isPassed={isPassed[currentPageIndex]}
         InstructionsBlob={content}
