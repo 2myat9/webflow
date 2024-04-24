@@ -9,6 +9,7 @@ import {
   ChangeNavbarColor,
   AddButton,
   StyleButton,
+  PublishPage,
 } from "./instructionBlobs";
 import {
   checkCenterAlign,
@@ -17,6 +18,7 @@ import {
   checkNavbarColor,
   checkButtonAdded,
   checkButtonStyle,
+  checkPublished,
 } from "./checkFunctions";
 
 function NavbarGame() {
@@ -28,17 +30,17 @@ function NavbarGame() {
     false,
     false,
     false,
-    false,
+    false
   ]);
 
   // pages mapped to their relevant check functions
   const functions = [
     checkCenterAlign,
     checkNavbarAdded,
-    checkNavBrand,
     checkNavbarColor,
     checkButtonAdded,
     checkButtonStyle,
+    checkPublished
   ];
 
   // update current page index state
@@ -76,14 +78,14 @@ function NavbarGame() {
   } else if (currentPageIndex == 1) {
     content = <AddNavbar />;
   } else if (currentPageIndex == 2) {
-    content = <AddLogo />;
-  } else if (currentPageIndex == 3) {
     content = <ChangeNavbarColor />;
-  } else if (currentPageIndex == 4) {
+  } else if (currentPageIndex == 3) {
     content = <AddButton />;
-  } else if (currentPageIndex >= 5) {
+  } else if (currentPageIndex == 4) {
     content = <StyleButton />;
-  }
+  } else if (currentPageIndex == 5) {
+    content = <PublishPage />;
+  } 
 
   return (
     <div>

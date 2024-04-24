@@ -41,7 +41,7 @@ export default function Home() {
           <CardMedia
             component="img"
             height="140"
-            image="https://assets-global.website-files.com/64f9399ca7d13575ff21a675/64f9399ca7d13575ff21d699_SYBG_ArchiveWorkspace_2400x1400.jpg"
+            image="https://i.postimg.cc/P5mCXRXz/Screen-Shot-2024-04-23-at-1-14-02-PM.png"
             alt="webflow logo"
           />
           <CardContent>
@@ -66,14 +66,12 @@ export default function Home() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Flexbox Fundamentals
+              Another Tutorial
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Flexbox is a CSS layout model that allows responsive elements
-              within a container to be automatically arranged depending on
-              viewport size. This is one of the most important concepts you will
+              This is one of the most important concepts you will
               need when building a website. Play this game and learn how to
-              align elements on the screen exactly how you want them.
+              manipulate elements on the screen exactly how you want them.
             </Typography>
           </CardContent>
         </CardActionArea>

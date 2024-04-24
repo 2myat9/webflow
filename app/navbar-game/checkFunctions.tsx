@@ -164,19 +164,18 @@ export const checkButtonStyle = async () => {
   const button = all[17];
   if (button?.styles) {
     const buttonStyles = await button.getStyles();
-    const hoverStyle = await webflow.getStyleByName("Hover");
+    // const hoverStyle = await webflow.getStyleByName("Hover");
     const butProp = await buttonStyles[0].getProperties();
-    if (hoverStyle) {
-      const secondProp = await hoverStyle.getProperties();
-      console.log(secondProp);
-    }
+    const hover : BreakpointAndPseudo = {pseudo: 'hover'};
+    const secondProp = await buttonStyles[0].getProperties(hover);
+    console.log(secondProp);
+
 
     console.log(butProp);
 
-    if (button.type === "Link" && hoverStyle) {
-      const secondProp = await hoverStyle.getProperties();
+    if (button.type === "Link") {
       if (
-        secondProp["background-color"] === "hsla(116, 68.06%, 72.86%, 1.00)"
+        secondProp["background-color"] === 'green'
       ) {
         await webflow.notify({
           type: "Success",
@@ -199,4 +198,12 @@ export const checkButtonStyle = async () => {
       return false;
     }
   }
+};
+
+// PUBLISHING
+export const checkPublished = async () => {
+  const siteInfo = await webflow.getSiteInfo();
+  const siteId = siteInfo.siteId;
+  
+  return true;
 };
